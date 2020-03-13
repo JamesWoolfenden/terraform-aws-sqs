@@ -1,4 +1,5 @@
 module "sqs" {
-  source     = "../../"
-  comon_tags = var.common_tags
+  source      = "../../"
+  name        = var.name
+  common_tags = var.common_tags
 }
