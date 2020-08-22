@@ -5,7 +5,7 @@
 [![Build Status](https://github.com/JamesWoolfenden/terraform-aws-sqs/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-sqs)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-sqs.svg)](https://github.com/JamesWoolfenden/terraform-aws-sqs/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
+[![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
 Terraform module - Very much WIP
 
@@ -15,6 +15,9 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 ## Usage
 
+This is a very basic example (so far).
+
+![sqs](./diagram/simple_queue_service.png)
 Include this repository as a module in your existing Terraform code:
 
 ```hcl
@@ -28,7 +31,31 @@ module "sqs" {
 The example in the **examplea** folder shows how to pass your own policy in when creating your key.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-Error: no lines in file
+## Requirements
+
+No requirements.
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
+| kms\_data\_key\_reuse\_period\_seconds | n/a | `number` | `300` | no |
+| kms\_master\_key\_id | n/a | `string` | `"alias/aws/sqs"` | no |
+| name | n/a | `string` | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| queue | n/a |
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
