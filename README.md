@@ -29,7 +29,6 @@ module "sqs" {
 The example in the **examplea** folder shows how to pass your own policy in when creating your key.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 No requirements.
@@ -37,23 +36,23 @@ No requirements.
 ## Providers
 
 | Name | Version |
-| ---- | ------- |
-| aws  | n/a     |
+|------|---------|
+| aws | n/a |
 
 ## Inputs
 
-| Name                              | Description                                        | Type     | Default           | Required |
-| --------------------------------- | -------------------------------------------------- | -------- | ----------------- | :------: |
-| common_tags                       | This is to help you add tags to your cloud objects | `map`    | n/a               |   yes    |
-| kms_data_key_reuse_period_seconds | n/a                                                | `number` | `300`             |    no    |
-| kms_master_key_id                 | n/a                                                | `string` | `"alias/aws/sqs"` |    no    |
-| name                              | n/a                                                | `string` | n/a               |   yes    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
+| kms\_data\_key\_reuse\_period\_seconds | n/a | `number` | `300` | no |
+| kms\_master\_key\_id | n/a | `string` | `"alias/aws/sqs"` | no |
+| name | n/a | `string` | n/a | yes |
 
 ## Outputs
 
-| Name  | Description |
-| ----- | ----------- |
-| queue | n/a         |
+| Name | Description |
+|------|-------------|
+| queue | n/a |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
