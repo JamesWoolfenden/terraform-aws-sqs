@@ -2,8 +2,12 @@
 
 [![Build Status](https://github.com/JamesWoolfenden/terraform-aws-sqs/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-sqs)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-sqs.svg)](https://github.com/JamesWoolfenden/terraform-aws-sqs/releases/latest)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-sqs.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-sqs/releases/latest)
+![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/JamesWoolfenden/terraform-aws-sqs/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-sqs&benchmark=CIS+AWS+V1.2)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-aws-sqs/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-aws-sqs&benchmark=INFRASTRUCTURE+SECURITY)
 
 Terraform module - Very much WIP
 
@@ -29,6 +33,7 @@ module "sqs" {
 The example in the **examplea** folder shows how to pass your own policy in when creating your key.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
 No requirements.
@@ -36,23 +41,23 @@ No requirements.
 ## Providers
 
 | Name | Version |
-|------|---------|
-| aws | n/a |
+| ---- | ------- |
+| aws  | n/a     |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| common\_tags | This is to help you add tags to your cloud objects | `map` | n/a | yes |
-| kms\_data\_key\_reuse\_period\_seconds | n/a | `number` | `300` | no |
-| kms\_master\_key\_id | n/a | `string` | `"alias/aws/sqs"` | no |
-| name | n/a | `string` | n/a | yes |
+| Name                              | Description                                        | Type     | Default           | Required |
+| --------------------------------- | -------------------------------------------------- | -------- | ----------------- | :------: |
+| common_tags                       | This is to help you add tags to your cloud objects | `map`    | n/a               |   yes    |
+| kms_data_key_reuse_period_seconds | n/a                                                | `number` | `300`             |    no    |
+| kms_master_key_id                 | n/a                                                | `string` | `"alias/aws/sqs"` |    no    |
+| name                              | n/a                                                | `string` | n/a               |   yes    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| queue | n/a |
+| Name  | Description |
+| ----- | ----------- |
+| queue | n/a         |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
@@ -76,7 +81,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright � 2019-2020 James Woolfenden
+Copyright © 2019-2021 James Woolfenden
 
 ## License
 
