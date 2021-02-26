@@ -13,7 +13,10 @@ variable "kms_data_key_reuse_period_seconds" {
   default = 300
 }
 
-
 variable "name" {
+  type = string
+}
+
+variable "policy" {
   type = string
 }

@@ -1,2 +1,4 @@
 common_tags = {
-"createdby" = "Terraform" }
+  "createdby" = "terraform"
+module = "terraform-aws-sqs" }
+name = "examplea"

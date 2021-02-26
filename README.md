@@ -43,6 +43,17 @@ No requirements.
 |------|---------|
 | aws | n/a |
 
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [aws_sqs_queue_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue_policy) |
+| [aws_sqs_queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -51,13 +62,13 @@ No requirements.
 | kms\_data\_key\_reuse\_period\_seconds | n/a | `number` | `300` | no |
 | kms\_master\_key\_id | n/a | `string` | `"alias/aws/sqs"` | no |
 | name | n/a | `string` | n/a | yes |
+| policy | n/a | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | queue | n/a |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
