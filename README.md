@@ -33,16 +33,15 @@ module "sqs" {
 The example in the **examplea** folder shows how to pass your own policy in when creating your key.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
 No requirements.
 
 ## Providers
 
-| Name                                             | Version |
-| ------------------------------------------------ | ------- |
-| <a name="provider_aws"></a> [aws](#provider_aws) | n/a     |
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
 
@@ -50,27 +49,26 @@ No modules.
 
 ## Resources
 
-| Name                                                                                                                          | Type     |
-| ----------------------------------------------------------------------------------------------------------------------------- | -------- |
-| [aws_sqs_queue.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue)               | resource |
+| Name | Type |
+|------|------|
+| [aws_sqs_queue.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) | resource |
 | [aws_sqs_queue_policy.examplea](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue_policy) | resource |
 
 ## Inputs
 
-| Name                                                                                                                                 | Description                                        | Type       | Default           | Required |
-| ------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------- | ---------- | ----------------- | :------: |
-| <a name="input_common_tags"></a> [common_tags](#input_common_tags)                                                                   | This is to help you add tags to your cloud objects | `map(any)` | n/a               |   yes    |
-| <a name="input_kms_data_key_reuse_period_seconds"></a> [kms_data_key_reuse_period_seconds](#input_kms_data_key_reuse_period_seconds) | n/a                                                | `number`   | `300`             |    no    |
-| <a name="input_kms_master_key_id"></a> [kms_master_key_id](#input_kms_master_key_id)                                                 | n/a                                                | `string`   | `"alias/aws/sqs"` |    no    |
-| <a name="input_name"></a> [name](#input_name)                                                                                        | n/a                                                | `string`   | n/a               |   yes    |
-| <a name="input_policy"></a> [policy](#input_policy)                                                                                  | n/a                                                | `string`   | n/a               |   yes    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| <a name="input_kms_data_key_reuse_period_seconds"></a> [kms\_data\_key\_reuse\_period\_seconds](#input\_kms\_data\_key\_reuse\_period\_seconds) | n/a | `number` | `300` | no |
+| <a name="input_kms_master_key_id"></a> [kms\_master\_key\_id](#input\_kms\_master\_key\_id) | n/a | `string` | `"alias/aws/sqs"` | no |
+| <a name="input_name"></a> [name](#input\_name) | n/a | `string` | n/a | yes |
+| <a name="input_policy"></a> [policy](#input\_policy) | n/a | `string` | n/a | yes |
 
 ## Outputs
 
-| Name                                               | Description |
-| -------------------------------------------------- | ----------- |
-| <a name="output_queue"></a> [queue](#output_queue) | n/a         |
-
+| Name | Description |
+|------|-------------|
+| <a name="output_queue"></a> [queue](#output\_queue) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
