@@ -94,10 +94,13 @@ resource "aws_iam_policy" "terraform_pike" {
                 "sqs:CreateQueue",
                 "sqs:DeleteQueue",
                 "sqs:GetQueueAttributes",
+                "sqs:GetQueueUrl",
                 "sqs:ListQueueTags",
                 "sqs:SetQueueAttributes"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         }
     ]
 })

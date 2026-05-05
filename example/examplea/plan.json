@@ -1,0 +1,659 @@
+{
+  "format_version": 1.2,
+  "terraform_version": "1.6.1",
+  "variables": {
+    "common_tags": {
+      "value": {
+        "createdby": "terraform",
+        "module": "terraform-aws-sqs"
+      }
+    },
+    "kms_data_key_reuse_period_seconds": {
+      "value": 300
+    },
+    "kms_master_key_id": {
+      "value": "alias/aws/sqs"
+    },
+    "name": {
+      "value": "examplea"
+    }
+  },
+  "planned_values": {
+    "outputs": {
+      "queue": {
+        "sensitive": false
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "aws_sns_topic.examplea",
+          "mode": "managed",
+          "type": "aws_sns_topic",
+          "name": "examplea",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "application_failure_feedback_role_arn": null,
+            "application_success_feedback_role_arn": null,
+            "application_success_feedback_sample_rate": null,
+            "content_based_deduplication": false,
+            "delivery_policy": null,
+            "display_name": null,
+            "fifo_topic": false,
+            "firehose_failure_feedback_role_arn": null,
+            "firehose_success_feedback_role_arn": null,
+            "firehose_success_feedback_sample_rate": null,
+            "http_failure_feedback_role_arn": null,
+            "http_success_feedback_role_arn": null,
+            "http_success_feedback_sample_rate": null,
+            "kms_master_key_id": "alias/aws/sns",
+            "lambda_failure_feedback_role_arn": null,
+            "lambda_success_feedback_role_arn": null,
+            "lambda_success_feedback_sample_rate": null,
+            "sqs_failure_feedback_role_arn": null,
+            "sqs_success_feedback_role_arn": null,
+            "sqs_success_feedback_sample_rate": null,
+            "tags": null
+          },
+          "sensitive_values": {
+            "tags_all": {}
+          }
+        },
+        {
+          "address": "data.aws_iam_policy_document.sqs",
+          "mode": "data",
+          "type": "aws_iam_policy_document",
+          "name": "sqs",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "override_json": null,
+            "override_policy_documents": null,
+            "policy_id": "sqspolicy",
+            "source_json": null,
+            "source_policy_documents": null,
+            "statement": [
+              {
+                "actions": [
+                  "sqs:SendMessage"
+                ],
+                "condition": [
+                  {
+                    "test": "ArnEquals",
+                    "values": [
+                      null
+                    ],
+                    "variable": "aws:SourceArn"
+                  }
+                ],
+                "effect": "Allow",
+                "not_actions": null,
+                "not_principals": [],
+                "not_resources": null,
+                "principals": [
+                  {
+                    "identifiers": [
+                      "*"
+                    ],
+                    "type": "*"
+                  }
+                ],
+                "resources": [
+                  null
+                ],
+                "sid": 1
+              }
+            ],
+            "version": null
+          },
+          "sensitive_values": {
+            "statement": [
+              {
+                "actions": false,
+                "condition": [
+                  {
+                    "values": false
+                  }
+                ],
+                "not_principals": [],
+                "principals": [
+                  {
+                    "identifiers": false
+                  }
+                ],
+                "resources": false
+              }
+            ]
+          }
+        }
+      ],
+      "child_modules": [
+        {
+          "resources": [
+            {
+              "address": "module.sqs.aws_sqs_queue.examplea",
+              "mode": "managed",
+              "type": "aws_sqs_queue",
+              "name": "examplea",
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 0,
+              "values": {
+                "content_based_deduplication": false,
+                "delay_seconds": 0,
+                "fifo_queue": false,
+                "kms_data_key_reuse_period_seconds": 300,
+                "kms_master_key_id": "alias/aws/sqs",
+                "max_message_size": 262144,
+                "message_retention_seconds": 345600,
+                "name": "examplea",
+                "receive_wait_time_seconds": 0,
+                "sqs_managed_sse_enabled": null,
+                "tags": null,
+                "visibility_timeout_seconds": 30
+              },
+              "sensitive_values": {
+                "tags_all": {}
+              }
+            },
+            {
+              "address": "module.sqs.aws_sqs_queue_policy.examplea",
+              "mode": "managed",
+              "type": "aws_sqs_queue_policy",
+              "name": "examplea",
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "schema_version": 1,
+              "sensitive_values": {}
+            }
+          ],
+          "address": "module.sqs"
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "data.aws_iam_policy_document.sqs",
+      "mode": "data",
+      "type": "aws_iam_policy_document",
+      "name": "sqs",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "read"
+        ],
+        "before": null,
+        "after": {
+          "override_json": null,
+          "override_policy_documents": null,
+          "policy_id": "sqspolicy",
+          "source_json": null,
+          "source_policy_documents": null,
+          "statement": [
+            {
+              "actions": [
+                "sqs:SendMessage"
+              ],
+              "condition": [
+                {
+                  "test": "ArnEquals",
+                  "values": [
+                    null
+                  ],
+                  "variable": "aws:SourceArn"
+                }
+              ],
+              "effect": "Allow",
+              "not_actions": null,
+              "not_principals": [],
+              "not_resources": null,
+              "principals": [
+                {
+                  "identifiers": [
+                    "*"
+                  ],
+                  "type": "*"
+                }
+              ],
+              "resources": [
+                null
+              ],
+              "sid": 1
+            }
+          ],
+          "version": null
+        },
+        "after_unknown": {
+          "id": true,
+          "json": true,
+          "statement": [
+            {
+              "actions": false,
+              "condition": [
+                {
+                  "values": true
+                }
+              ],
+              "not_principals": [],
+              "principals": [
+                {
+                  "identifiers": false
+                }
+              ],
+              "resources": true
+            }
+          ]
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "statement": [
+            {
+              "actions": false,
+              "condition": [
+                {
+                  "values": false
+                }
+              ],
+              "not_principals": [],
+              "principals": [
+                {
+                  "identifiers": false
+                }
+              ],
+              "resources": false
+            }
+          ]
+        }
+      },
+      "action_reason": "read_because_config_unknown"
+    },
+    {
+      "address": "aws_sns_topic.examplea",
+      "mode": "managed",
+      "type": "aws_sns_topic",
+      "name": "examplea",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "application_failure_feedback_role_arn": null,
+          "application_success_feedback_role_arn": null,
+          "application_success_feedback_sample_rate": null,
+          "content_based_deduplication": false,
+          "delivery_policy": null,
+          "display_name": null,
+          "fifo_topic": false,
+          "firehose_failure_feedback_role_arn": null,
+          "firehose_success_feedback_role_arn": null,
+          "firehose_success_feedback_sample_rate": null,
+          "http_failure_feedback_role_arn": null,
+          "http_success_feedback_role_arn": null,
+          "http_success_feedback_sample_rate": null,
+          "kms_master_key_id": "alias/aws/sns",
+          "lambda_failure_feedback_role_arn": null,
+          "lambda_success_feedback_role_arn": null,
+          "lambda_success_feedback_sample_rate": null,
+          "sqs_failure_feedback_role_arn": null,
+          "sqs_success_feedback_role_arn": null,
+          "sqs_success_feedback_sample_rate": null,
+          "tags": null
+        },
+        "after_unknown": {
+          "arn": true,
+          "id": true,
+          "name": true,
+          "name_prefix": true,
+          "owner": true,
+          "policy": true,
+          "tags_all": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "tags_all": {}
+        }
+      }
+    },
+    {
+      "address": "module.sqs.aws_sqs_queue.examplea",
+      "module_address": "module.sqs",
+      "mode": "managed",
+      "type": "aws_sqs_queue",
+      "name": "examplea",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "content_based_deduplication": false,
+          "delay_seconds": 0,
+          "fifo_queue": false,
+          "kms_data_key_reuse_period_seconds": 300,
+          "kms_master_key_id": "alias/aws/sqs",
+          "max_message_size": 262144,
+          "message_retention_seconds": 345600,
+          "name": "examplea",
+          "receive_wait_time_seconds": 0,
+          "sqs_managed_sse_enabled": null,
+          "tags": null,
+          "visibility_timeout_seconds": 30
+        },
+        "after_unknown": {
+          "arn": true,
+          "deduplication_scope": true,
+          "fifo_throughput_limit": true,
+          "id": true,
+          "name_prefix": true,
+          "policy": true,
+          "redrive_allow_policy": true,
+          "redrive_policy": true,
+          "tags_all": true,
+          "url": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "tags_all": {}
+        }
+      }
+    },
+    {
+      "address": "module.sqs.aws_sqs_queue_policy.examplea",
+      "module_address": "module.sqs",
+      "mode": "managed",
+      "type": "aws_sqs_queue_policy",
+      "name": "examplea",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {},
+        "after_unknown": {
+          "id": true,
+          "policy": true,
+          "queue_url": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "output_changes": {
+    "queue": {
+      "actions": [
+        "create"
+      ],
+      "before": null,
+      "after": {
+        "content_based_deduplication": false,
+        "delay_seconds": 0,
+        "fifo_queue": false,
+        "kms_data_key_reuse_period_seconds": 300,
+        "kms_master_key_id": "alias/aws/sqs",
+        "max_message_size": 262144,
+        "message_retention_seconds": 345600,
+        "name": "examplea",
+        "receive_wait_time_seconds": 0,
+        "sqs_managed_sse_enabled": null,
+        "tags": null,
+        "visibility_timeout_seconds": 30
+      },
+      "after_unknown": {
+        "arn": true,
+        "deduplication_scope": true,
+        "fifo_throughput_limit": true,
+        "id": true,
+        "name_prefix": true,
+        "policy": true,
+        "redrive_allow_policy": true,
+        "redrive_policy": true,
+        "tags_all": true,
+        "url": true
+      },
+      "before_sensitive": false,
+      "after_sensitive": false
+    }
+  },
+  "configuration": {
+    "provider_config": {
+      "aws": {
+        "name": "aws",
+        "full_name": "registry.terraform.io/hashicorp/aws",
+        "version_constraint": "4.31.0",
+        "expressions": {
+          "region": {
+            "constant_value": "eu-west-2"
+          }
+        }
+      }
+    },
+    "root_module": {
+      "outputs": {
+        "queue": {
+          "expression": {
+            "references": [
+              "module.sqs.queue",
+              "module.sqs"
+            ]
+          }
+        }
+      },
+      "resources": [
+        {
+          "address": "aws_sns_topic.examplea",
+          "mode": "managed",
+          "type": "aws_sns_topic",
+          "name": "examplea",
+          "provider_config_key": "aws",
+          "expressions": {
+            "kms_master_key_id": {
+              "constant_value": "alias/aws/sns"
+            }
+          },
+          "schema_version": 0
+        },
+        {
+          "address": "data.aws_iam_policy_document.sqs",
+          "mode": "data",
+          "type": "aws_iam_policy_document",
+          "name": "sqs",
+          "provider_config_key": "aws",
+          "expressions": {
+            "policy_id": {
+              "constant_value": "sqspolicy"
+            },
+            "statement": [
+              {
+                "actions": {
+                  "constant_value": [
+                    "sqs:SendMessage"
+                  ]
+                },
+                "condition": [
+                  {
+                    "test": {
+                      "constant_value": "ArnEquals"
+                    },
+                    "values": {
+                      "references": [
+                        "aws_sns_topic.examplea.arn",
+                        "aws_sns_topic.examplea"
+                      ]
+                    },
+                    "variable": {
+                      "constant_value": "aws:SourceArn"
+                    }
+                  }
+                ],
+                "effect": {
+                  "constant_value": "Allow"
+                },
+                "principals": [
+                  {
+                    "identifiers": {
+                      "constant_value": [
+                        "*"
+                      ]
+                    },
+                    "type": {
+                      "constant_value": "*"
+                    }
+                  }
+                ],
+                "resources": {
+                  "references": [
+                    "module.sqs.queue.arn",
+                    "module.sqs.queue",
+                    "module.sqs"
+                  ]
+                },
+                "sid": {
+                  "constant_value": 1
+                }
+              }
+            ]
+          },
+          "schema_version": 0
+        }
+      ],
+      "module_calls": {
+        "sqs": {
+          "source": "../../",
+          "expressions": {
+            "common_tags": {
+              "references": [
+                "var.common_tags"
+              ]
+            },
+            "name": {
+              "references": [
+                "var.name"
+              ]
+            },
+            "policy": {
+              "references": [
+                "data.aws_iam_policy_document.sqs.json",
+                "data.aws_iam_policy_document.sqs"
+              ]
+            }
+          },
+          "module": {
+            "outputs": {
+              "queue": {
+                "expression": {
+                  "references": [
+                    "aws_sqs_queue.examplea"
+                  ]
+                }
+              }
+            },
+            "resources": [
+              {
+                "address": "aws_sqs_queue.examplea",
+                "mode": "managed",
+                "type": "aws_sqs_queue",
+                "name": "examplea",
+                "provider_config_key": "aws",
+                "expressions": {
+                  "kms_data_key_reuse_period_seconds": {
+                    "references": [
+                      "var.kms_data_key_reuse_period_seconds"
+                    ]
+                  },
+                  "kms_master_key_id": {
+                    "references": [
+                      "var.kms_master_key_id"
+                    ]
+                  },
+                  "name": {
+                    "references": [
+                      "var.name"
+                    ]
+                  }
+                },
+                "schema_version": 0
+              },
+              {
+                "address": "aws_sqs_queue_policy.examplea",
+                "mode": "managed",
+                "type": "aws_sqs_queue_policy",
+                "name": "examplea",
+                "provider_config_key": "aws",
+                "expressions": {
+                  "policy": {
+                    "references": [
+                      "var.policy"
+                    ]
+                  },
+                  "queue_url": {
+                    "references": [
+                      "aws_sqs_queue.examplea.id",
+                      "aws_sqs_queue.examplea"
+                    ]
+                  }
+                },
+                "schema_version": 1
+              }
+            ],
+            "variables": {
+              "common_tags": {
+                "description": "This is to help you add tags to your cloud objects"
+              },
+              "kms_data_key_reuse_period_seconds": {
+                "default": 300
+              },
+              "kms_master_key_id": {
+                "default": "alias/aws/sqs"
+              },
+              "name": {},
+              "policy": {}
+            }
+          }
+        }
+      },
+      "variables": {
+        "common_tags": {
+          "description": "This is to help you add tags to your cloud objects"
+        },
+        "kms_data_key_reuse_period_seconds": {
+          "default": 300
+        },
+        "kms_master_key_id": {
+          "default": "alias/aws/sqs"
+        },
+        "name": {}
+      }
+    }
+  },
+  "relevant_attributes": [
+    {
+      "resource": "module.sqs.aws_sqs_queue.examplea",
+      "attribute": [
+        "id"
+      ]
+    },
+    {
+      "resource": "module.sqs.aws_sqs_queue.examplea",
+      "attribute": []
+    },
+    {
+      "resource": "data.aws_iam_policy_document.sqs",
+      "attribute": [
+        "json"
+      ]
+    },
+    {
+      "resource": "aws_sns_topic.examplea",
+      "attribute": [
+        "arn"
+      ]
+    }
+  ],
+  "timestamp": "2023-10-31T23:30:47Z",
+  "errored": false
+}
